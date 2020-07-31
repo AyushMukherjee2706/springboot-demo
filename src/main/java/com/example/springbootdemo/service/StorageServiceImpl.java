@@ -9,13 +9,13 @@ import java.nio.file.Paths;
 import java.io.File;
 import java.util.stream.Stream;
 
-@Service // Learn more on this
+@Service
 public class StorageServiceImpl implements StorageService {
 
 	private final Path root = Paths.get("uploads");
 
 
-	public void save(MultipartFile file) { // Is this upload or selecting the files then.
+	public void save(MultipartFile file) {
 		try {
 			Files.copy(file.getInputStream(), this.root.resolve(file.getOriginalFilename()));
 		} catch (Exception e) {
@@ -23,16 +23,16 @@ public class StorageServiceImpl implements StorageService {
 		}
 	}
 
-	public void init() { // method to create the upload folder is not already existing
+	public void init() {
 		try {
-			Files.createDirectory(root);
+//			Files.createDirectory(root);
 			System.out.println("intializing");
 		} catch (Exception e) {
 			throw new RuntimeException("Could not initialize folder for upload!");
 		}
 	}
 
-	public String[] loadAll() { // method to load all the files that are uploaded.
+	public String[] loadAll() {
 //		try {
 //			return Files.walk(this.root, 1).filter(path -> !path.equals(this.root)).map(this.root::relativize);
 //		}
@@ -40,7 +40,7 @@ public class StorageServiceImpl implements StorageService {
 		try {
 			File folders = new File("uploads");
 
-			return folders.list(); // returning the list in "List of files" page
+			return folders.list();
 		} catch (Exception e) {
 			throw new RuntimeException("Could not load the files!");
 		}
