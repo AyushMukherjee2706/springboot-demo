@@ -5,7 +5,7 @@ public class RecordDto {
 	private String project;
 	private String tower;
 	private String module;
-	private String certificationYear;
+	private String certification;
 	private String typeOfResource;
 
 	@Override
@@ -15,7 +15,7 @@ public class RecordDto {
 				", project='" + project + '\'' +
 				", tower='" + tower + '\'' +
 				", module='" + module + '\'' +
-				", certificationYear='" + certificationYear + '\'' +
+				", certificationYear='" + certification + '\'' +
 				", typeOfResource='" + typeOfResource + '\'' +
 				", emailId='" + emailId + '\'' +
 				", location='" + location + '\'' +
@@ -57,12 +57,12 @@ public class RecordDto {
 		this.module = module;
 	}
 
-	public String getCertificationYear() {
-		return certificationYear;
+	public String getCertification() {
+		return certification;
 	}
 
-	public void setCertificationYear(String certificationYear) {
-		this.certificationYear = certificationYear;
+	public void setCertification(String certification) {
+		this.certification = certification;
 	}
 
 	public String getTypeOfResource() {

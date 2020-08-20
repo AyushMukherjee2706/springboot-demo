@@ -17,7 +17,7 @@ import java.util.Set;
 @Service
 public class ProjectService {
 
-	Logger logger = LoggerFactory.getLogger(ProjectService.class);
+	
 	@Autowired
 	private RecordRepository recordRepository;
 
@@ -26,7 +26,7 @@ public class ProjectService {
 		try {
 			recordRepository.save(record);
 		} catch (Exception e) {
-			logger.error("Exception while inserting data: {}", e.getMessage());
+			System.out.println("Exception while inserting data" + e.getMessage());
 		}
 	}
 
@@ -40,17 +40,25 @@ public class ProjectService {
 		return linkedHashSet;
 	}
 
-	public List<Record> getAllRecords(){
+	public List<Record> getAllRecords(){   
 		return recordRepository.findAll();
 	}
-
-	public void getResult(CollectedDataDto collectedDataDto){
+//Result
+	public List getResult(CollectedDataDto collectedDataDto){
 		List<Record> recs = recordRepository.findAllRecords(collectedDataDto.getLocation(), collectedDataDto.getModule(), collectedDataDto.getTower(), collectedDataDto.getResource());
 		for(Record rec: recs){
+			System.out.println("---------------------------Data---------------------------------------");
 			System.out.println(rec.getLocation());
 			System.out.println(rec.getModule());
+			System.out.println(rec.getTower());
+			System.out.println(rec.getPractitionerName());
+			System.out.println(rec.getCertification());
+			System.out.println(rec.getEmailId());
+			
+			
+			
 		}
+		return recs;
 
-//		System.out.println(rec);
 	}
 }

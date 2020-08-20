@@ -16,9 +16,5 @@ public class ProjectController {
 	@Autowired
 	private ProjectService projectService;
 
-//	@RequestMapping(value = "/project/all", method = RequestMethod.GET)
-//	public ResponseEntity allProjects() {
-//
-//		return new ResponseEntity(projectService.allProjects(), HttpStatus.OK);
-//	}
+
 }

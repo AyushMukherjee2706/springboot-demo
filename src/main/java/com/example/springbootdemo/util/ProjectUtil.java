@@ -8,7 +8,7 @@ public class ProjectUtil {
 	public static Record recordValueOf(RecordDto recordDto){
 
 		Record record = new Record();
-		record.setCertificationYear(recordDto.getCertificationYear());
+		record.setCertification(recordDto.getCertification());
 		record.setEmailId(recordDto.getEmailId());
 		record.setLocation(recordDto.getLocation());
 		record.setModule(recordDto.getModule());

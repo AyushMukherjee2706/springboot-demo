@@ -27,8 +27,8 @@ public class Record {
     @Column(name = "module")
     private String module;
 
-    @Column(name = "certification_year")
-    private String certificationYear;
+    @Column(name = "certification")
+    private String certification;
 
     @Column(name = "type_of_resource")
     private String typeOfResource;
@@ -71,12 +71,12 @@ public class Record {
         this.module = module;
     }
 
-    public String getCertificationYear() {
-        return certificationYear;
+    public String getCertification() {
+        return certification;
     }
 
-    public void setCertificationYear(String certificationYear) {
-        this.certificationYear = certificationYear;
+    public void setCertification(String certification) {
+        this.certification = certification;
     }
 
     public String getTypeOfResource() {
