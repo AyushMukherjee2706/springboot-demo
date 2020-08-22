@@ -13,6 +13,8 @@ public interface RecordRepository extends JpaRepository<Record, Long> {
 	@Query(value = "select project from record", nativeQuery = true)
 	public List<String> findAllProjects();
 
+	public List<Record> findByProject(String name);
+
 	@Query(value = "SELECT * FROM Record as r WHERE (:location is null or  r.location IN (:location)) AND  (:module is null  or r.module IN (:module)) AND  (:tower is null  or r.tower IN (:tower)) AND  (:type_of_resource is null  or r.type_of_resource  IN (:type_of_resource ))", nativeQuery = true)
 	public List<Record> findAllRecords(@Param("location") List<String> location,
 									   @Param("module") List<String> module,

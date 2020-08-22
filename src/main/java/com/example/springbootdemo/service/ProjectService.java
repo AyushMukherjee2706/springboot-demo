@@ -40,8 +40,8 @@ public class ProjectService {
 		return linkedHashSet;
 	}
 
-	public List<Record> getAllRecords(){   
-		return recordRepository.findAll();
+	public List<Record> getRecordsByProject(String projectName){
+		return recordRepository.findByProject(projectName);
 	}
 //Result
 	public List getResult(CollectedDataDto collectedDataDto){
